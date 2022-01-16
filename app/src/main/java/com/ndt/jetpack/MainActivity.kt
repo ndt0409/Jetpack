@@ -2,10 +2,27 @@ package com.ndt.jetpack
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
+import com.ndt.jetpack.databinding.ActivityMainBinding
+import com.ndt.jetpack.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var viewModel: MainViewModel
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel.number.observe(this, {
+            //update ui
+            binding.tvNumber.text = it.toString()
+        })
+        binding.btnUp.setOnClickListener {
+            viewModel.increaseNumber()
+        }
     }
 }
