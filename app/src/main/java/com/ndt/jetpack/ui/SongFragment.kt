@@ -30,11 +30,15 @@ class SongFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSongBinding.inflate(layoutInflater)
+
         //viewModel = ViewModelProvider(this).get(MusicViewModel::class.java)
         //viewModel = ViewModelProvider(requireActivity()).get(MusicViewModel::class.java) //dung chung context cua music viewmodel
-        viewModel.number.observe(viewLifecycleOwner, {
-            binding.tvNumber.text = it.toString()
-        })
+
+        binding.vm = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+//        viewModel.number.observe(viewLifecycleOwner, {
+//            binding.tvNumber.text = it.toString()
+//        })
         binding.btnUp.setOnClickListener {
 //            viewModel.increaseNumber()
 //            viewModel.showToast()
