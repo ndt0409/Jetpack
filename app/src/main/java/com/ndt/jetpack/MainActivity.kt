@@ -3,10 +3,11 @@ package com.ndt.jetpack
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import com.ndt.jetpack.base.BaseActivity
 import com.ndt.jetpack.databinding.ActivityMainBinding
 import com.ndt.jetpack.viewmodel.MainViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: ActivityMainBinding

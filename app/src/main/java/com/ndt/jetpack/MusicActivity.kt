@@ -4,9 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ndt.jetpack.adapter.MusicPagerAdapter
+import com.ndt.jetpack.base.BaseActivity
 import com.ndt.jetpack.databinding.ActivityMusicBinding
 
-class MusicActivity : AppCompatActivity() {
+class MusicActivity : BaseActivity() {
     private lateinit var binding: ActivityMusicBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

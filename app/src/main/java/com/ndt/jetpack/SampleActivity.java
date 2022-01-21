@@ -5,10 +5,11 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 
+import com.ndt.jetpack.base.BaseActivity;
 import com.ndt.jetpack.databinding.ActivitySampleBinding;
 import com.ndt.jetpack.viewmodel.SampleViewModel;
 
-public class SampleActivity extends AppCompatActivity {
+public class SampleActivity extends BaseActivity {
 
     private ActivitySampleBinding binding;
     private SampleViewModel viewModel;
